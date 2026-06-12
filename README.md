@@ -3,24 +3,15 @@
 This repository contains the implementation for the **CVPR 2026** paper
 **"ViHOI: Human-Object Interaction Synthesis with Visual Priors"**.
 
-ViHOI is built on top of the CHOIS baseline and adds visual-language priors for
-human-object interaction synthesis.
 
 ## Environment Setup
 
-Our local environments are:
-
-```bash
-conda activate /home/songjin/anaconda3/envs/chois_env
-conda activate /home/songjin/anaconda3/envs/qwen
-```
-
-`chois_env` is used for ViHOI training and inference. `qwen` is only needed if
+`Diffusion Environment` is used for ViHOI training and inference. `VLM Environment` is only needed if
 you need to regenerate Qwen2.5-VL visual/textual embeddings.
 
 ### Diffusion Environment
 
-For a fresh `chois_env`, follow the CHOIS setup:
+For a fresh `diffusion environment`, follow the CHOIS setup:
 
 ```bash
 conda create -n chois_env python=3.8
@@ -91,8 +82,6 @@ processed_data/251006-dual_gen_vlm_hidden_3_padded_test
 processed_data/250930-dual_gen_vlm_hidden_12_padded_test
 ```
 
-If your data or embeddings are stored elsewhere, update the corresponding paths
-in `scripts/train_vihoi.sh` and `scripts/test_vihoi.sh`.
 
 ## Visual Prior Preprocessing
 
@@ -112,7 +101,6 @@ tools/render_image.py
 Run:
 
 ```bash
-conda activate chois_env
 python tools/render_image.py
 ```
 
@@ -158,6 +146,7 @@ ViHOI follows the CHOIS training pipeline, but additionally uses visual/textual
 VLM priors.
 
 ```text
+conda activate chois_env
 scripts/train_vihoi.sh
 ```
 
@@ -167,6 +156,7 @@ ViHOI inference follows the CHOIS single-window testing setting and generates
 single-window human-object interaction sequences.
 
 ```text
+conda activate chois_env
 scripts/test_vihoi.sh
 ```
 
