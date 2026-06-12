@@ -1,4 +1,4 @@
-name: vihoi
+name: qwen
 channels:
   - defaults
   - conda-forge
@@ -273,4 +273,4 @@ dependencies:
       - wandb==0.21.1
       - wcwidth==0.2.13
       - websockets==15.0.1
-prefix: /home/linjie/miniconda3/envs/vihoi
+prefix: /home/linjie/miniconda3/envs/qwen
