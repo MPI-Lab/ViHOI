@@ -150,6 +150,24 @@ conda activate chois_env
 scripts/train_vihoi.sh
 ```
 
+## Pretrained Model
+
+We have released our trained ViHOI model weights. You can download them [here](https://github.com/MPI-Lab/ViHOI/releases).
+
+From the repository root, extract the downloaded archive:
+
+```bash
+mkdir -p ./out/visual_3_textual_12
+tar -xzf model-vihoi-release.tar.gz \
+  -C ./out/visual_3_textual_12
+```
+
+Update the `--pretrained_model` argument in `scripts/test_vihoi.sh` to:
+
+```bash
+--pretrained_model="./out/visual_3_textual_12/model-vihoi-release.pt" \
+```
+
 ## Inference
 
 ViHOI inference follows the CHOIS single-window testing setting and generates
